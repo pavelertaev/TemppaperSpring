@@ -15,5 +15,5 @@ public interface FilesService {
     File getFileSOck();
 
     void cleanSockFile();
-
+//
 }

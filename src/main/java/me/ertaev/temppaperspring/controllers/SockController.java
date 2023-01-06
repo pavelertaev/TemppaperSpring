@@ -10,7 +10,7 @@ import me.ertaev.temppaperspring.model.Sock;
 import me.ertaev.temppaperspring.service.SockService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+//
 @RequestMapping("/sock")
 @RestController
 @Tag(name = "Носки " , description = "CRUD - операции и другие эндпоинты для отпуска и со склада , удаление брачных , и добавления носков")

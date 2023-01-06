@@ -1,7 +1,7 @@
 package me.ertaev.temppaperspring.record;
 
 public class InfoRecord {
-
+//
     private final String name;
     private final String description;
 
