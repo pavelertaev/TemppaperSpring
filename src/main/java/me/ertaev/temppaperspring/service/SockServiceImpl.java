@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Map;
 import java.util.TreeMap;
+
 @Service
 public class SockServiceImpl implements SockService {
 
@@ -82,11 +83,12 @@ public class SockServiceImpl implements SockService {
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public File createSockTxtFile() throws FileNotFoundException {
         Path path = fileService.createTempFile("Socks");
         try (Writer writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
-            for (Sock sock: socks.values()) {
+            for (Sock sock : socks.values()) {
                 writer.append(socks.toString());
                 writer.append("\n");
             }

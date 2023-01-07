@@ -49,7 +49,6 @@ public class FilesServiceImpl implements FilesService {
         cleanFile(socksFileName);
     }
 
-
     private boolean saveToFile(String fileName, String json) {
         try {
             cleanFile(fileName);
