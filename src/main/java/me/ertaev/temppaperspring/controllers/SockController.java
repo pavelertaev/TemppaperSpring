@@ -13,19 +13,20 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/sock")
 @RestController
-@Tag(name = "Носки " , description = "CRUD - операции и другие эндпоинты для отпуска и со склада , удаление брачных , и добавления носков")
+@Tag(name = "Носки ", description = "CRUD - операции и другие эндпоинты для отпуска и со склада , удаление брачных , и добавления носков")
 public class SockController {
     private final SockService sockService;
 
     public SockController(SockService sockService) {
         this.sockService = sockService;
     }
+
     @PostMapping
     @Operation(description = "Добавление носков на склад ")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Носки были добавлены" ,
+                    description = "Носки были добавлены",
                     content = {
                             @Content(
                                     mediaType = "application/json",
@@ -47,7 +48,7 @@ public class SockController {
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Носки были найдены" ,
+                    description = "Носки были найдены",
                     content = {
                             @Content(
                                     mediaType = "application/json",
@@ -73,7 +74,7 @@ public class SockController {
         if (sockService.getSock(id) == null) {
             return ResponseEntity.notFound().build();
         }
-        Sock sock =sockService.editSock(id,newSock);
+        Sock sock = sockService.editSock(id, newSock);
         return ResponseEntity.ok(sock);
     }
 
